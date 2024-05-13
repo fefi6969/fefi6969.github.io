@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>AdapterWatch</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body bgcolor="lightblue">
+  <font face="Verdana">
+    <h1 align="center">
+      <font color="darkred">NetworkTrafficView</font>
+    </h1>
+    <table>
+      <tr>
+        <td widht="50%" align="left">
+          <h1>
+            <font color="purple">
+              <center>Definizione</center>
+            </font>
+          </h1>
+          NetworkTrafficView è uno strumento di monitoraggio della <br>
+          rete che cattura i pacchetti che passano attraverso <br>
+          l'adattatore di rete e visualizza statistiche generali<br>
+          sul traffico di rete. Le statistiche dei pacchetti sono<br>
+          raggruppate per tipo Ethernet, protocollo IP, indirizzi <br>
+          di origine/destinazione e porte di origine/destinazione.<br>
+          Per ogni riga delle statistiche vengono visualizzate le <br>
+          seguenti informazioni: Tipo Ethernet (IPv4, IPv6, ARP), <br>
+          Protocollo IP (TCP, UDP, ICMP), Indirizzo sorgente, <br>
+          Indirizzo di destinazione, Porta sorgente, Porta <br>
+          destinazione, Nome servizio (http, ftp, e così via),<br>
+          conteggio pacchetti, dimensione totale pacchetti, <br>
+          dimensione totale dati, velocità dati, velocità massima<br>
+          dati, dimensione media pacchetto, ora primo/ultimo <br>
+          pacchetto, durata e ID/nome processo (per connessioni TCP)
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td widht="50%" align="rigth">
+          <h1>
+            <font color="purple">
+              <center>Requisiti di sistema</center>
+            </font>
+          </h1>
+          Questa utility funziona su qualsiasi versione di Windows, <br>
+          a partire da Windows 2000 e fino a Windows 10, inclusi i <br>
+          sistemi a 64 bit. Per utilizzare NetworkTrafficView è <br>
+          necessario uno dei seguenti driver di acquisizione:<br>
+          Driver di acquisizione Npcap Npcap è un driver di acquisizione<br>
+          open source basato sulla libreria WinPcap fuori produzione <br>
+          che consente di acquisire pacchetti di rete su qualsiasi <br>
+          versione di Windows. È possibile scaricare e installare <br>
+          il driver Npcap da questa pagina Web .<br>
+          Driver Microsoft Network Monitor versione 2.x <br>
+          (solo per Windows 2000/XP/2003): Microsoft fornisce un driver di<br>
+          acquisizione gratuito in Windows 2000/XP/2003 che può <br>
+          essere utilizzato da NetworkTrafficView, ma questo<br>
+          driver non è installato per impostazione predefinita e <br>
+          è necessario installarlo manualmente, utilizzando una<br>
+          delle seguenti opzioni:<br>
+          Opzione 1: installarlo dal CD-ROM di Windows 2000/XP <br>
+          secondo le istruzioni nel sito Web Microsoft<br>
+          Opzione 2 (solo XP): scaricare e installare gli strumenti <br>
+          di supporto di Windows XP Service Pack 2 . Uno degli<br>
+          strumenti in questo pacchetto è netcap.exe. Quando <br>
+          esegui questo strumento per la prima volta, il driver del<br>
+          monitor di rete verrà installato automaticamente sul tuo<br>
+          sistema.<br>
+          Driver Microsoft Network Monitor versione 3.x: Microsoft <br>
+          fornisce una nuova versione del driver Microsoft<br>
+          Network Monitor (3.x) supportata anche in Windows 7/Vista/2008.<br>
+          La nuova versione di Microsoft Network Monitor (3.x) è <br>
+          disponibile per il download dal sito Web Microsoft .<br>
+          Puoi anche provare a utilizzare NetworkTrafficView senza<br>
+          installare alcun driver, utilizzando il metodo 'Raw<br>
+          Sockets'. Sfortunatamente, il metodo Raw Sockets presenta <br>
+          molti problemi:<br>
+          Non funziona su tutti i sistemi Windows, a seconda della <br>
+          versione di Windows, del service pack e degli<br>
+          aggiornamenti installati sul sistema. Su alcuni sistemi <br>
+          Raw Sockets funziona solo parzialmente e cattura solo<br>
+          i pacchetti in entrata. Su alcuni altri sistemi, non <br>
+          funziona affatto.<br>
+          Sui sistemi in cui il metodo 'Raw Sockets' funziona <br>
+          correttamente, può acquisire solo pacchetti TCP/UDP IPv4.<br>
+          Non può catturare altri tipi di pacchetti, come gli altri<br>
+          driver di cattura.<br>
+          Su Windows 7 con UAC attivato, il metodo "Raw Sockets" <br>
+          funziona solo quando si esegue NetworkTrafficView con<br>
+          "Esegui come amministratore".
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <h1>
+            <font color="purple">
+              <center>Utilizzando AdapterWatch</center>
+            </font>
+          </h1>
+          Ad eccezione di un driver di acquisizione necessario per acquisire <br>
+          i pacchetti di rete, NetworkTrafficView non richiede alcun processo <br>
+          di installazione o file dll aggiuntivi. Per iniziare a usarlo, <br>
+          esegui semplicemente il file eseguibile - NetworkTrafficView.exe<br>
+          Dopo aver eseguito NetworkTrafficView per la prima volta,<br>
+          sullo schermo viene visualizzata la finestra "Opzioni di acquisizione"<br>
+          e ti viene richiesto di scegliere il metodo di acquisizione e l'adattatore <br>
+          di rete desiderato. La prossima volta che utilizzerai NetworkTrafficView, <br>
+          inizierà automaticamente ad acquisire i pacchetti con il metodo di <br>
+          acquisizione e l'adattatore di rete selezionati in precedenza. Puoi sempre<br>
+          modificare nuovamente le "Opzioni di acquisizione" premendo F9.<br>
+          Dopo aver scelto il metodo di acquisizione e l'adattatore di rete, <br>
+          NetworkTrafficView inizia a visualizzare il traffico di rete corrente, <br>
+          raggruppato per tipo Ethernet, protocollo IP, indirizzi di origine/destinazione e<br>
+          porte di origine/destinazione.<br>
+          È possibile premere F6 per interrompere l'acquisizione del traffico di <br>
+          rete, F5 per riavviarla o Ctrl+X per cancellare le statistiche attuali <br>
+          del traffico di rete.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h1>
+            <font color="purple">
+              <center>Licenza</center>
+            </font>
+          </h1>
+          Questa utility è rilasciata come freeware. È consentito distribuire <br>
+          liberamente questa utilità tramite floppy disk, CD-ROM, Internet o <br>
+          in qualsiasi altro modo, purché non venga addebitato alcun costo per <br>
+          questo e non la si venda o la distribuisca come parte di scopi commerciali.<br>
+          Prodotto. Se distribuisci questa utility, devi includere tutti i file nel <br>
+          pacchetto di distribuzione, senza alcuna modifica!
+        </td>
+      </tr>
+    </table>
+    <div align="center">
+      <button class="button"><a href="https://www.nirsoft.net/utils/networktrafficview.zip" class="a a:hover">
+          <font color="white">Clicca per il download x32</font>
+        </a></button>
+      <button class="button"><a href="https://www.nirsoft.net/utils/networktrafficview-x64.zip" class="a a:hover">
+        <font color="white">Clicca per il download x64</font>
+      </a></button>
+      <button class="button"><a href="index.html" class="a a:hover">
+          <font color="white">HomePage</font>
+        </a></button>
+    </div>
+  </font>
+</body>
+
+</html>
